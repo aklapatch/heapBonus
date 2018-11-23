@@ -8,13 +8,27 @@ std::vector<int> makeHeap(std::vector<int> input){
     for(int j = 0; j < 3; ++j){
 
         // start from the back and go toward the 0 of the array
-        for(int i =input.size()-1; i>=0; --i){
-            // swap if heap property is violated
-            if(input[i] < input[i/2]){
-                int tmp = input[i];
-                input[i] = input[i/2];
-                input[i/2] = tmp;
+        for(int i =0; i < input.size(); ++i){
+
+            // bounds check
+            if(2*i < input.size()){
+
+                // swap if heap property is violated
+                if(input[i] > input[2*i]){
+                    int tmp = input[i];
+                    input[i] = input[2*i];
+                    input[2*i] = tmp;
+                }
             }
+            //bounds check
+            if(2*i+1 < input.size()){
+                // swap if heap property is violated
+                if(input[i] > input[2*i+1]){
+                    int tmp = input[i];
+                    input[i] = input[2*i+1];
+                    input[2*i+1] = tmp;
+                }
+            }   
         }
     }
     
