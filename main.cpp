@@ -20,12 +20,12 @@ void printHeap(std::vector<int> input){
             }
             // output right child data
             if ( input.size() > 3){
-                std::cout << "Left Child data = " << input[2] << "\n";
+                std::cout << "Right Child data = " << input[2] << "\n";
             }
         // every member node case
         }  else {
             // output data and node number
-            std::cout << "Member " << i+1 << " ";
+            std::cout << "Node " << i+1 << " ";
             std::cout << "Data= " << input[i] << "\n";
 
             // print left child
