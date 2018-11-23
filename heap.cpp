@@ -5,7 +5,7 @@
 // this sort just needs to make sure that is true
 std::vector<int> makeHeap(std::vector<int> input){
     // it needs to run more than one times to ensure heap property
-    for(int j = 0; j < 3; ++j){
+    for(int j = 0; j < input.size()/2; ++j){
 
         // start from the back and go toward the 0 of the array
         for(int i =0; i < input.size(); ++i){
