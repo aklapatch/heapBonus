@@ -9,26 +9,31 @@ void printHeap(std::vector<int> input){
     
     // print out every element and its children
     for(int i = 0; i < input.size(); ++i){
+        
+        // root node case
         if(i == 0){
             std::cout << "Root Data= " << input[0] << "\n";  
             
+            // output left child data
             if ( input.size() > 2){
-                
                 std::cout << "Left Child data = " << input[1] << "\n";
             }
+            // output right child data
             if ( input.size() > 3){
-                
                 std::cout << "Left Child data = " << input[2] << "\n";
             }
+        // every member node case
         }  else {
+            // output data and node number
             std::cout << "Member " << i+1 << " ";
             std::cout << "Data= " << input[i] << "\n";
 
+            // print left child
             if(2*i < input.size()){
                 std::cout << "Left Child data = " << input[2*i] << "\n";
             }
         
-
+            // print right child
             if(2*i + 1 < input.size()){
                 std::cout << "Right Child data = " << input[2*i+1] << "\n";
             }
@@ -47,7 +52,10 @@ int main(int argc, char ** argv){
     int i = argc;
     std::vector<int> numbers(argc-1);
 
+    // put all the arguments in the vector
     while(--i > 0){
+
+        // check if the arg is a string
         if(isdigit(argv[i][0])){
 
             numbers[i -1] = atol(argv[i]);
@@ -56,6 +64,7 @@ int main(int argc, char ** argv){
         }
     }
 
+    // sort the heap
     std::vector<int> heap = makeHeap(numbers);
 
     printHeap(heap);
